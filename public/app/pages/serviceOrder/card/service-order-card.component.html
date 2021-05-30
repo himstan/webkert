@@ -1,0 +1,11 @@
+<mat-card *ngIf="serviceOrder" appOnHover (click)="route()" (ngModelChange)="$event.stopPropagation()">
+    <mat-card-header>
+      <mat-card-title>{{serviceOrder.description}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{serviceOrder.category}}</p>
+    </mat-card-content>
+    <button mat-fab class="action-btn" (click)="removeServiceOrder()">
+      <mat-icon>remove</mat-icon>
+    </button>
+</mat-card>

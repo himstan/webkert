@@ -1,0 +1,27 @@
+[mat-button] {
+  text-transform: capitalize;
+}
+
+[mat-button]:not(:last-child) {
+  margin-right: 16px;
+}
+
+a[mat-button] {
+  font-size: x-large;
+  width: fit-content;
+}
+
+.active {
+  border-bottom: white 1px solid;
+  border-radius: 0;
+}
+
+mat-toolbar {
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  flex: 1 1 auto;
+  border-bottom: white 1px solid;
+}

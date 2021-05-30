@@ -1,0 +1,22 @@
+<form *ngIf="serviceOrder" [formGroup]="form">
+  <h3>Service Order Item adatok</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Leírás</mat-label>
+    <input matInput focus formControlName="description" required [value]="serviceOrder.description">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Kategória</mat-label>
+    <input matInput focus formControlName="category" [value]="serviceOrder.category">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Elérhetőség</mat-label>
+    <input matInput focus formControlName="notificationContact" [value]="serviceOrder.notificationContact">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Prioritás</mat-label>
+    <input matInput focus formControlName="priority" [value]="serviceOrder.priority">
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="save()" [disabled]="form.invalid">MENTÉS</button>
+  </div>
+</form>

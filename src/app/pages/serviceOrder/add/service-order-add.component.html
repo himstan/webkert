@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+  <h3>Service Order Item felvétel</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Leírás</mat-label>
+    <input matInput focus formControlName="description" required>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Kategória</mat-label>
+    <input matInput focus formControlName="category">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Elérhetőség</mat-label>
+    <input matInput focus formControlName="notificationContact">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Prioritás</mat-label>
+    <input matInput focus formControlName="priority">
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+  </div>
+</form>

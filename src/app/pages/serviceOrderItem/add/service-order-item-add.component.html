@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <h3>Service Order Item felvétel</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Action</mat-label>
+    <mat-select matInput formControlName="action">
+      <mat-option *ngFor="let action of actions" [value]="action">
+        {{action}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Mennyiség</mat-label>
+    <input matInput focus formControlName="quantity">
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Állapot</mat-label>
+    <mat-select matInput formControlName="state">
+      <mat-option *ngFor="let state of states" [value]="state">
+        {{state}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+  </div>
+</form>
